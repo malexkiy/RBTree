@@ -2,11 +2,12 @@
 #define RB_TREE_HPP
 
 #include <iostream>
+#include <fstream>
 #include <sstream>
 #include <initializer_list>
 
-const char RED = 'r';	//0head01;
-const char BLACK = 'b';	// 0head00;
+const char RED = 'r';	//0x01;
+const char BLACK = 'b';	// 0x00;
 
 template <typename T>
 class RBTree;
@@ -86,9 +87,7 @@ public:
 	bool operator==(const RBTree<T>&) const;
 
 	std::ostream& inorder(std::ostream&) const;
-	std::ostream& RBTree<T>::preorder(std::ostream&) const;
-
-	//friend std::ostream& operator<< (std::ostream&, const RBTree&);
+	std::ostream& preorder(std::ostream&) const;
 
 	std::ifstream& inFile(std::ifstream&);
 	std::ofstream& outFile(std::ofstream&) const;
